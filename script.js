@@ -126,11 +126,13 @@ function renderTabel(tbody, pesanKosong, denganAksi) {
 // Menghitung dan menampilkan angka pada dashboard
 function tampilkanCard() {
   const tersedia = daftarBarang.filter(b => b.stok > 10).length;
-  const menipis = daftarBarang.filter(b => b.stok > 0 && b.stok <= 10).length;
+  const menipis  = daftarBarang.filter(b => b.stok > 0 && b.stok <= 10).length;
+  const habis    = daftarBarang.filter(b => b.stok === 0).length;
 
-  document.getElementById('totalBarang').textContent = daftarBarang.length;
+  document.getElementById('totalBarang').textContent   = daftarBarang.length;
   document.getElementById('totalTersedia').textContent = tersedia;
-  document.getElementById('totalMenipis').textContent = menipis;
+  document.getElementById('totalMenipis').textContent  = menipis;
+  document.getElementById('totalHabis').textContent    = habis;
 }
 
 

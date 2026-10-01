@@ -156,7 +156,7 @@ body {
 /* ---------- Kartu ringkasan ---------- */
 .cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 18px;
   margin-bottom: 24px;
 }
@@ -190,6 +190,7 @@ body {
 
 .card:nth-child(2)::before { background: var(--success); }
 .card:nth-child(3)::before { background: var(--warning); }
+.card:nth-child(4)::before { background: var(--danger); }
 
 .card-label {
   color: var(--muted);
@@ -533,6 +534,12 @@ input:focus {
 }
 
 /* ---------- Responsive ---------- */
+@media (max-width: 1100px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
   .sidebar {
     position: static;
